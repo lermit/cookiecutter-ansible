@@ -6,7 +6,7 @@
 
 - name: Install base package
   apt:
-    pkg: "{{ item }}"
+    pkg: "{{ '{{' }} item {{ '}}' }}"
     state: "present"
   with_items:
     - curl
