@@ -2,5 +2,9 @@
 
 - hosts: all
   roles:
-  - {{cookiecutter.github_username}}.common
-       
+  - {{cookiecutter.repo_name}}.common
+    - geerlingguy.ntp
+#    - pockost.sudo
+#    - pockost.shorewall
+#    - pockost.monitoring
+

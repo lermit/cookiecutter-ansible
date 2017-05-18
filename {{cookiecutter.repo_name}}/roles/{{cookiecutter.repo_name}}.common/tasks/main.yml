@@ -1,0 +1,22 @@
+---
+
+- name: Update apt
+  apt: update_cache=yes
+  become: yes
+
+- name: Install base package
+  apt:
+    pkg: "{{ item }}"
+    state: "present"
+  with_items:
+    - curl
+    - rsync
+    - python-pip
+    - vim
+  become: yes
+
+- name: Add Romain ssh key
+  authorized_key:
+    user: pockost
+    state: present
+    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDyKcjiraS7hfNpdYFaYid+2eg5nsjay7lHEGDmc62CFlFoplLvxM3Qg89QVSb1dVIA41X9FJ8esyFnIX/AE+9BAXiI5NBnK1SYrJEHg3nCLKzrmSEqKexH0vgKuc3iMeHOxowjUZ7tHp0zm+CL08B7lYVxsFFwwCSCFWE9NOuo9+ghUiVB+8551NP/APsX5yFa2NkiggaWwmSLvzGtqdcIbA6VvlaP3SYWI+RWmDjAGYUGXzKxIFeie4876Na7GkuTHbXk0540QfWqct/3gjTwznpQh3QbPyscxnKAN95ZCV2NjuaNM0phJwamChGJlQ2qsg7j+FTJxvYWcXC/TPcZ
