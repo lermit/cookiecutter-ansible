@@ -1,0 +1,14 @@
+---
+- hosts: all
+  environment:
+    LC_ALL: C
+    LANG: C
+
+  tasks:
+
+  - name: Upgrade packages
+    apt:
+      update_cache: yes
+      cache_valid_time: 600
+      upgrade: yes
+      autoremove: yes
