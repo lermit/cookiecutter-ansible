@@ -6,11 +6,13 @@ Use it with Cookiecutter_:
 
 .. code-block:: bash
 
-    $ cookiecutter https://github.com/waltermoreira/cookiecutter-ansible
-    
-    
+    $ cookiecutter https://github.com/lermit/cookiecutter-ansible
+
+
 License
 -------
+
+Based on waltermoreira project (see https://github.com/waltermoreira/cookiecutter-ansible)
 
 MIT
 
